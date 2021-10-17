@@ -1,0 +1,13 @@
+<!--pages/mainpage/mainpage.wxml-->
+<view class='white_texture'>
+  <view class="center">
+    <image class="tail_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211011004526505-1929688651.png'></image>
+  </view>
+  <view class="center">
+    <image bindtap='startgame' class="start_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016191006205-547030779.png'></image>
+  </view>
+  <view class="center">
+    <image bindtap='viewrule' class="rule_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016200836579-1813198477.png'></image>
+  </view>
+</view>
+

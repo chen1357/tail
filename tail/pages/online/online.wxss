@@ -1,0 +1,86 @@
+/* pages/online/online.wxss */
+
+/*在线对战*/
+.match_image{
+  position: absolute;
+  top: 8%;
+  height:12%;
+}
+
+/*创建对局按钮*/
+.create_image{
+  position: absolute;
+  top: 33%;
+  height:10%;
+}
+/*加入对局按钮*/
+.join_image{
+  position: absolute;
+  top: 55%;
+  height:10%;
+}
+/*按钮图片*/
+/* .button_image{
+  position: absolute;
+  left:0%;
+  top:0%;
+  height:100%;
+  width: 100%;
+} */
+
+
+
+.dialog_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);   /*设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4);*/
+  display: none;
+}
+
+.dialog_container {
+  position: fixed;
+  bottom: 400rpx;
+  width: 650rpx;    /*弹窗布局宽*/
+  height: 350rpx;   /*弹窗布局高，与下面弹出距离transform有关*/
+  margin-left: 50rpx;
+  background: #fff799;
+  transform: translateY(340%);  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  box-shadow: 0px 3px 3px 2px #aba000;  /*弹框的悬浮阴影效果，如不需要可注释该行*/
+}
+
+.show_dialog .dialog_container {
+  transform: translateY(0);
+}
+
+.show_dialog .dialog_mask {
+  display: block;
+}
+
+.text_image{
+  position: absolute;
+  top:5%;
+  left:5%;
+  width:90%;
+}
+
+.no_image{
+  position: absolute;
+  top:50%;
+  right:20%;
+  height: 30%;
+  width: 15%;
+}
+.yes_image{
+  position: absolute;
+  top:50%;
+  left:20%;
+  height: 30%;
+  width: 15%;
+}
