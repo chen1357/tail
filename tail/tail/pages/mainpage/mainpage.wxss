@@ -1,0 +1,23 @@
+/* pages/home/home.wxss */
+
+/*猪尾巴*/
+.tail_image{
+  position: absolute;
+  top: 8%;
+  height:14%;
+  
+}
+/*开始游戏按钮*/
+.start_image{
+  position: absolute;
+  top: 33%;
+  height:10%;
+  
+}
+/*游戏规则按钮*/
+.rule_image{
+  position: absolute;
+  top: 55%;
+  height:10%;
+  
+}

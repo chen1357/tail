@@ -1,0 +1,17 @@
+<!--pages/mode_choose.wxml-->
+<view class='white_texture'>
+  <view class="center">
+    <image class="mode_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016202610883-1426779850.png'></image>
+  </view>
+  
+  <view class="center">
+    <image bindtap='nativegame' class="player_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017040558876-322714904.png'></image>
+  </view>
+  <view class="center">
+    <image bindtap='computergame' class="computer_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016205250010-1260249837.png'></image>
+  </view>
+  <view class="center">
+    <image bindtap='onlinegame' class="online_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016205851605-318338253.png'></image>
+  </view>
+  
+</view>
