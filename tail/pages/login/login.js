@@ -27,13 +27,13 @@ Page({
     var that = this;
     wx.request({
       url: 'http://172.17.173.97:8080/api/user/login',
-      method: 'Post',//方法分GET和POST，根据需要写
-      header: {//定死的格式，不用改，照敲就好
+      method: 'Post',//方法
+      header: {//格式
         'Content-Type': 'application/x-www-form-urlencoded' //json'
       },
       data:{
-        student_id:"031902534",//that.data.ano,//
-        password:"lucy031902",//that.data.pwd//
+        student_id:that.data.ano,//
+        password:that.data.pwd//
          },
     success: function (res) {//这里写调用接口成功之后所运行的函数
         console.log(res.data.message)
