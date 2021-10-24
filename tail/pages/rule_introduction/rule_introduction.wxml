@@ -1,17 +1,8 @@
 <!--pages/rule_introduction/rule_introduction.wxml-->
-<view class='white_texture'>
-
+  <view class="center">
+    <image class="rule_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211023041513354-512529181.png'></image>
+  </view>
+  <view class="center">
+    <image class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211023041337122-1216045164.png'></image>
+  </view>
   
-
-
-
-
-
-
-
-
-
-
-</view>
-
-

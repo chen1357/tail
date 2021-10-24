@@ -15,6 +15,12 @@ App({
   },
   
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token:"",
+    token_2:"",
+    uuid:"",
+    student_id:"",
+
+    self_flag:true
   }
 })

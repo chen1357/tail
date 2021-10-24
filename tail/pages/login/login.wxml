@@ -1,0 +1,27 @@
+
+ <!-- pages/login/login.wxml -->
+<view class='white_texture'>
+  <view class="center">
+    <image class="login_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017230703488-523667023.png'></image>
+  </view>
+  <view class="account_number">
+    <view class="ano_text" style="color: rgb(255, 255, 255);" >账号 </view>
+    <view  class="ano_input">
+      <input bindinput="ano_tap" type="number"  maxlength="9" placeholder="请输入账号" />
+    </view>
+  </view>
+  <view class="password">
+    <view class="pwd_text" style="color: rgb(255, 255, 255);" >密码</view>
+    <view class="pwd_input">
+      <input bindinput="pwd_tap" password type="text" placeholder="请输入密码" />
+    </view>
+  </view>
+  <button class='btn' style="width: 25% ; top: 60%;" bindtap='confirm'  hover-class='btn_hover' >确定</button>
+  <!-- <view class="center"> 
+    <image bindtap='confirm' class="confirm_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018172228437-473546749.png'></image>
+  </view> -->
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
+  </view>
+  
+</view>

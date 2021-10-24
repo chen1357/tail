@@ -4,24 +4,28 @@
   position: absolute;
   top: 8%;
   height:12%;
+  border-radius: 20%;
 }
 /*人人对战按钮*/
 .player_image{
   position: absolute;
   top: 30%;
   height:10%;
+  border-radius: 20%;
 }
 /*人机对战按钮*/
 .computer_image{
   position: absolute;
   top: 50%;
   height:10%;
+  border-radius: 20%;
 }
 /*在线对战按钮*/
 .online_image{
   position: absolute;
   top: 70%;
   height:10%;
+  border-radius: 20%;
 }
 
 /*按钮图片*/

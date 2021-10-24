@@ -1,0 +1,67 @@
+<!--pages/self_online/self_online.wxml-->
+<!--pages/online_match/online_match.wxml-->
+<view class='white_texture'>
+  <!-- 上 -->
+  <view class="top"> 
+    <view class="text">玩家2</view>
+    <view class="player_2">
+      <view class="s_top">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view class="s_top">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view class="s_top" >
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view  class="s_top">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+    </view>
+  </view>
+   <!-- 中 -->
+   <view class="middle">
+     <view class="l">
+      <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+     </view>
+    <view class="l">
+      <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+    </view>
+  </view>
+  <!-- 下 -->
+  <view class="bottom"> 
+    <view class="player_1" >
+      <view class="s_bottom">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view class="s_bottom">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view class="s_bottom" >
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+      <view  class="s_bottom">
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>
+      </view>
+    </view>
+    <view class="text">玩家1</view>
+  </view>
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
+  </view>
+  <view class="create_dialog {{ showDialog ? 'show_dialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view class="dialog_mask" bindtap="return_cancel" />
+      <view class="dialog_container">
+        <!-- <view style='padding:100rpx;'> -->
+          <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021191422098-1329247360.png'></image>
+          <image bindtap='return_cancel' class="no_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025505148-1399705152.png'></image>
+          <image bindtap='return_confirm' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image>
+          <!-- </view> -->
+      </view>
+  </view>
+
+
+
+</view>
+

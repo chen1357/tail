@@ -1,15 +1,29 @@
 {
   "pages": [
     "pages/mainpage/mainpage",
+    "pages/login/login",
+    "pages/online_match/online_match",
+    "pages/online/online",
+    
+    "pages/player_match/player_match",
+    
+    
+    "pages/self_online/self_online",
+    "pages/jion_match/jion_match",
+    
+    "pages/rule_introduction/rule_introduction",
+    
+    "pages/create_match/create_match",
     "pages/index/index",
     "pages/logs/logs",
     "pages/mode_choose/mode_choose",
-    "pages/rule_introduction/rule_introduction",
-    "pages/player_match/player_match",
+    
+    
     "pages/computer_match/computer_match",
-    "pages/online/online",
-    "pages/jion_match/jion_match",
+    
+    
     "pages/match_list/match_list"
+    
 
   ],
   "window": {

@@ -41,7 +41,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.20.0",
   "appid": "wxe21b5675d812d613",
-  "projectname": "miniprogram-3",
+  "projectname": "tail",
   "debugOptions": {
     "hidedInDevtools": []
   },

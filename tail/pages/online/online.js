@@ -1,11 +1,13 @@
 // pages/online/online.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showDialog: false
+    showDialog: false,
+    self:false
   },
 
   /**
@@ -14,19 +16,94 @@ Page({
   * 1：点击弹窗以外的位置可消失弹窗
   * 2：用到弹出或者关闭弹窗的业务逻辑时都可调用
   */
- create_cancel() {
+  create_cancel() {
   this.setData({
     showDialog: !this.data.showDialog
   });
 
 },
-
-  
   create_game:function(){
     this.setData({
       showDialog: true
   })
+ 
   },
+  self_jion:function(e){
+    var that=this;
+    var app=getApp();
+    if(e.currentTarget.dataset.self=="true"){
+      app.globalData.self_flag=true;
+    }
+    else{
+      app.globalData.self_flag=false;
+    }
+    console.log(typeof(app.globalData.self_flag))
+    this.setData({
+      'self':app.globalData.self_flag
+    })
+    console.log(that.data.self)
+    wx.request({
+          url: 'http://172.17.173.97:9000/api/game',
+          method: 'post',//方法分GET和POST，根据需要写
+          header: {//定死的格式，不用改，照敲就好
+        "Authorization": "Bearer "+app.globalData.token
+          },
+          data:{
+              "private": app.globalData.self_flag
+          },
+          success: function (res) {//这里写调用接口成功之后所运行的函数
+          var app=getApp();
+            if(res.data.msg=="操作成功")
+            {
+              app.globalData.uuid=res.data.data.uuid;
+              that.setData({
+                showDialog: !that.data.showDialog
+              });
+              //console.log(that.data.self)
+              if(that.data.self==true){
+                setTimeout(function() {
+                  wx.navigateTo({
+                    url: '../self_online/self_online',
+                  })
+                });
+              }
+              else{
+                setTimeout(function() {
+                  wx.navigateTo({
+                    url: '../online_match/online_match',
+                  })
+                });
+              }
+              
+            }
+            else{
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'none',
+              });
+            }
+          console.log(res.data);//调出来的数据在控制台显示，方便查看
+          },
+          fail: function (res) {//这里写调用接口失败之后所运行的函数
+            wx.showToast({
+              title: '创建失败',
+              icon: 'none',
+            });
+            console.log('.........fail..........');
+           }
+        })
+  },
+  jion_game:function(){
+    wx.navigateTo({
+      url:'../jion_match/jion_match',
+    })
+  },
+  return_home:function(){
+    wx.reLaunch({
+      url: '../mainpage/mainpage',
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

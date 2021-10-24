@@ -13,6 +13,7 @@
   position: fixed;
   height:100%;
   width: 100%;
+  /* background-image: url('https://img2020.cnblogs.com/blog/1925109/202109/1925109-20210913222115644-1799129910.jpg'); */
   background-image: url('https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016224315530-796274671.png');
   background-size: 100% 100%;
 }
@@ -31,7 +32,6 @@
 .home_image{
   position: absolute;
   left:3%;
-  top: 90%;
-  width: 10%;
-  height:10%;
+  top: 93%;
+  height:5%;
 }

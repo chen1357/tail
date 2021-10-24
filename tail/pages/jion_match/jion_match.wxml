@@ -1,15 +1,23 @@
 <!--pages/jion_match/jion_match.wxml-->
 <view class='white_texture'>
-  
-  
+  <view class="center">
+    <image class="join_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017214646578-747525707.png'></image>
+  </view>
 
-
-
-
-
-
-
-
-
+  <view class="input">
+      <image class="input_text" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211022020036914-315342353.png'></image>
+      <view  class="uuid_input">
+        <input class="  "bindinput="uuid_tap" type="number" placeholder="请输入对局号" />
+      </view>
+      
+  </view>
+  <button class='btn' style="width: 25% ; top: 42%;" bindtap='confirm'  hover-class='btn_hover' >确定</button>
+  <view class="center">
+    <!-- <view class="ano_text" style="color: rgb(255, 255, 255);" >账号 </view> -->
+    <image bindtap="view_list" class="list" mode="heightFix"  src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211022015703684-187041895.png"></image>
+  </view>
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
+  </view>
 
 </view>

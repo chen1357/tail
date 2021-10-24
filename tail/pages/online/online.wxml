@@ -10,17 +10,19 @@
     <image bindtap='jion_game' class="join_image" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211016215116513-1672201436.png'></image>
   </view>
 
-  <view class="create_dialog {{ showDialog ? 'show_dialog' : '' }}">
-  <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
-  <view class="dialog_mask" bindtap="create_cancel" />
-  <view class="dialog_container">
-    <!-- <view style='padding:100rpx;'> -->
-      <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017043201599-1621765925.png'></image>
-      <image bindtap='self_jion' class="no_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025505148-1399705152.png'></image>
-      <image bindtap='not_self_jion' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image>
-    <!-- </view> -->
+    <view class="create_dialog {{ showDialog ? 'show_dialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view class="dialog_mask" bindtap="create_cancel" />
+      <view class="dialog_container">
+        <!-- <view style='padding:100rpx;'> -->
+          <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017043201599-1621765925.png'></image>
+          <image bindtap='self_jion' data-self="false" class="no_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025505148-1399705152.png'></image>
+          <image bindtap='self_jion'data-self="true" class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image>
+          <!-- </view> -->
+      </view>
+    </view>
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
   </view>
-</view>
-
 
 </view>

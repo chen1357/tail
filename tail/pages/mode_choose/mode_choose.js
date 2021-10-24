@@ -8,20 +8,20 @@ Page({
 
   },
   nativegame:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url:'../player_match/player_match',
     })
-    },
+  },
   computergame:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url:'../computer_match/computer_match',
     })
-    },
-  onlinegame:function(){
-    wx.redirectTo({
-      url:'../online/online',
+  },
+  login:function(){
+    wx.navigateTo({
+      url:'../login/login',//'../login/login',
     })
-    },
+  },
     
   /**
    * 生命周期函数--监听页面加载

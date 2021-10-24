@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/player_match/player_match",
+          "pathName": "pages/player_match/player_match",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/online_match/online_match",
+          "pathName": "pages/online_match/online_match",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mainpage/mainpage",
+          "pathName": "pages/mainpage/mainpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/self_online/self_online",
+          "pathName": "pages/self_online/self_online",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

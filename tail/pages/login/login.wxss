@@ -1,0 +1,76 @@
+/* pages/login/login.wxss */
+
+.login_image{
+  position: absolute;
+  top: 5%;
+  height:15%;
+  border-radius: 10%;
+}
+.account_number{
+  left:20%;
+  position: absolute;
+  display: flex;
+  /* justify-content: center; */
+  justify-content :flex-start;
+  top:40%;
+  /* height:10%; */
+  width: 60%;
+  border: 3rpx solid #fff100;
+  background-color: antiquewhite;
+  flex-direction: column;
+}
+.ano_text{
+  display: flex;
+  align-items: flex-start;
+  top:0%;
+  width: 100%;
+  /* height:50%; */
+  background-color:darksalmon;
+}
+.ano_input{
+  display: flex;
+  display: block;
+  top:20%;
+}
+.password{
+  left:20%;
+  position: absolute;
+  display: flex;
+  /* justify-content: center; */
+  justify-content :flex-start;
+  top:50%;
+  /* height:10%; */
+  width: 60%;
+  border: 3rpx solid #fff100;
+  background-color: antiquewhite;
+  flex-direction: column;
+}
+.pwd_text{
+  align-items: flex-start;
+  display: flex;
+  top:0%;
+  width:100%;
+  /* height:50%; */
+  background-color:darksalmon;
+}
+.pwd_input{
+  top:20%;
+  display: flex;
+}
+
+/* .confirm_image{
+  position: absolute;
+  top: 50%;
+  height:5%;
+} */
+
+.btn {
+  position: absolute;
+  left: 37.5%;
+  background-color: pink;
+  color: #FFF; 
+}
+.btn_hover {
+  background-color: rgb(248, 169, 182);
+}
+

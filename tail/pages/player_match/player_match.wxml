@@ -1,15 +1,129 @@
 <!--pages/player_match/player_match.wxml-->
+
 <view class='white_texture'>
+  <!-- 上 -->
+  <view class="top"> 
+    <view class="text">玩家2</view>
+    
+    <view class="player_2">
+      <button class='btn' style="width: 25% ; top: 0%; background-color:{{score_2}};" bindtap='start_ai' data-player="2"  hover-class='btn_hover' >{{text_2}}</button>
+      <text>{{hand_card_len[4]}}</text>               
+      <view class="s_top" wx:if="{{hand_card_len[4]>0}}">
+        <image bindtap="card_out" data-operation="4" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card[4][0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
 
-  
+        <text>{{hand_card_len[5]}}</text>
+      <view class="s_top" wx:if="{{hand_card_len[5]>0}}">
+        <image bindtap="card_out" data-operation="5" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card[5][0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+      
+        <text>{{hand_card_len[6]}}</text>
+      <view class="s_top" wx:if="{{hand_card_len[6]>0}}">
+        <image bindtap="card_out" data-operation="6" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card[6][0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
 
+        <text>{{hand_card_len[7]}}</text>
+        <view class="s_top" wx:if="{{hand_card_len[7]>0}}">
+        <image bindtap="card_out" data-operation="7" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card[7][0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+    </view>
+  </view>
 
+   <!-- 中 -->
+   <view class="turn">turn:玩家{{turn}}</view>
+   <view class="middle">
+      <!-- <text>{{group.card.length}}</text> -->
+      <text>{{group.length}}</text>
+      <view class="l" wx:if="{{group.length>0}}">
+          <image bindtap="group_out"  class="large" mode="heightFix" src='../../card/back.png'></image>   </view>
+      <view class="l" wx:else>
+          <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>  </view>
 
+      <!-- <text>{{place.card.length}}</text> --><!-- <text>{{place.length}}</text> -->
+      <text>{{place_length}}</text>
+      <view class="l" wx:if="{{place_length>0}}">
+          <image bindtap="" class="large" mode="heightFix" src='../../card/{{place[0]}}.png'></image>   </view>
+      <view class="l" wx:else>  
+          <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>  </view>
+  </view>
+  <!-- 下 -->
+  <view class="bottom"> 
+    <view class="player_1" >
+      <button class='btn' style="width: 25% ; top: 0%;background-color:{{score_1}};" bindtap='start_ai' data-player="1"  hover-class='btn_hover' >{{text_1}}</button>
+      <text>{{hand_card_len[0]}}</text>
+      <view class="s_bottom" wx:if="{{hand_card_len[0]>0}}">
+        <image bindtap="card_out" data-operation="0" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card[0][0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
 
+        <text>{{hand_card_len[1]}}</text>
+      <view class="s_bottom" wx:if="{{hand_card_len[1]>0}}">
+        <image bindtap="card_out" data-operation="1" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card[1][0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+        <text>{{hand_card_len[2]}}</text>
+        <view class="s_bottom" wx:if="{{hand_card_len[2]>0}}">
+        <image bindtap="card_out" data-operation="2" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card[2][0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
 
+        <text>{{hand_card_len[3]}}</text>
+        <view class="s_bottom" wx:if="{{hand_card_len[3]>0}}">
+        <image bindtap="card_out" data-operation="3" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card[3][0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+    </view>
+    <view class="text">玩家1</view>
+  </view>
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
+  </view>
+  <view class="create_dialog {{ showDialog ? 'show_dialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view class="dialog_mask" bindtap="return_cancel" />
+      <view class="dialog_container">
+        <!-- <view style='padding:100rpx;'> -->
+          <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021191422098-1329247360.png'></image>
+          <image bindtap='return_cancel' class="no_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025505148-1399705152.png'></image>
+          <image bindtap='return_confirm' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image>
+          <!-- </view> -->
+      </view>
+  </view>
 
-
+  <view class="create_dialog {{ game_over_showDialog ? 'game_over_showDialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view bindtap='return_confirm' class="dialog_mask_2"  />
+      <view bindtap='return_confirm' class="dialog_container_2">
+        <!-- <view style='padding:100rpx;'> -->
+          <view class="text"><text class="game_over">游戏结束</text></view>
+          <view class="text"><text class="game_over">{{result}}</text></view>
+          <view class="text">(点击任意处返回主页)</view>
+          <!-- <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021191422098-1329247360.png'></image> -->
+          
+          <!-- <image bindtap='return_confirm' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image> -->
+          <!-- </view> -->
+      </view>
+  </view>
 
 
 
 </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

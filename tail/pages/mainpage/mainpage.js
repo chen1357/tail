@@ -8,12 +8,12 @@ Page({
 
   },
     startgame:function(){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../mode_choose/mode_choose',
       })
-      },
+    },
     viewrule:function(){
-      wx.redirectTo({
+      wx.navigateTo({
         url:'../rule_introduction/rule_introduction',
       })
       },

@@ -1,1 +1,12 @@
 /* pages/rule_introduction/rule_introduction.wxss */
+.rule_image{
+  position: absolute;
+  top: 1%;
+  height:12%;
+  border-radius: 20%;
+}
+.text_image{
+  position: absolute;
+  top: 14%;
+  width: 98%;
+}

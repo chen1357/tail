@@ -5,6 +5,7 @@
   position: absolute;
   top: 8%;
   height:12%;
+  border-radius: 20%;
 }
 
 /*创建对局按钮*/
@@ -12,12 +13,14 @@
   position: absolute;
   top: 33%;
   height:10%;
+  border-radius: 20%;
 }
 /*加入对局按钮*/
 .join_image{
   position: absolute;
   top: 55%;
   height:10%;
+  border-radius: 20%;
 }
 /*按钮图片*/
 /* .button_image{
@@ -43,12 +46,12 @@
 
 .dialog_container {
   position: fixed;
-  bottom: 400rpx;
+  bottom: 40%;
   width: 650rpx;    /*弹窗布局宽*/
-  height: 350rpx;   /*弹窗布局高，与下面弹出距离transform有关*/
+  height: 25%;   /*弹窗布局高，与下面弹出距离transform有关*/
   margin-left: 50rpx;
   background: #fff799;
-  transform: translateY(340%);  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  transform: translateY(400%);  /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
   transition: all 0.4s ease;
   z-index: 12;
   border-radius: 20rpx;

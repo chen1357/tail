@@ -1,15 +1,30 @@
 <!--pages/match_list/match_list.wxml-->
 <view class='white_texture'>
-
-  
-
-
-
-
-
-
-
-
-
-
+<!-- 底部排名 -->
+<view class='contentBottom'>
+  <view class='BottomFirst'>
+   <text id='0' data-id='0'>对局列表</text>
+  </view>
+  <swiper class="tab-right" style='background:{{bgColor}};' vertical="true" display-multiple-items='7'>
+   <!-- <view class="right-item"> -->
+    <block wx:for-index="idx" wx:for='{{games}}'>
+     <swiper-item bindtap="choose" data-id="{{item.uuid}}" >
+      <view class='content-item' >
+       <text class='uuid'>uuid: {{item.uuid}}</text>
+       <text class='host_id'>host_id:  {{item.host_id}}</text>
+       <text class='created_at'>created_at: {{item.created_at}} </text>
+       <text class='client_id'>client_id: {{item.client_id}} </text>
+      </view>
+     </swiper-item>
+    </block> 
+     
+   <!-- </view> -->
+  </swiper>
+ </view>
 </view>
+
+
+
+ 
+
+

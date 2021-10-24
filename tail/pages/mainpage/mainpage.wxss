@@ -5,19 +5,19 @@
   position: absolute;
   top: 8%;
   height:14%;
-  
+  border-radius: 20%;
 }
 /*开始游戏按钮*/
 .start_image{
   position: absolute;
   top: 33%;
   height:10%;
-  
+  border-radius: 20%;
 }
 /*游戏规则按钮*/
 .rule_image{
   position: absolute;
   top: 55%;
   height:10%;
-  
+  border-radius: 20%;
 }

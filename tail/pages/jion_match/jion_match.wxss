@@ -1,1 +1,58 @@
 /* pages/jion_match/jion_match.wxss */
+
+.join_image{
+  position: absolute;
+  top: 8%;
+  height:11%;
+  border-radius: 20%;
+}
+.input{
+  position: absolute;
+  top: 30%;
+  left:10%;
+  height:10%;
+  width:80%;
+  border:3px solid rgb(146, 143, 143);
+  background-color:rgb(248, 246, 100) ;
+}
+.input_text{
+  position: absolute;
+  display: flex;
+  height:37%;
+}
+.uuid_input{
+  position: absolute;
+  display: flex;
+  justify-content :flex-start;
+  top:40%;
+  /* display: block; */
+  height: 60%;
+  width: 100%;
+  background-color:rgb(252, 250, 172);
+  /* min-height: 50%; */
+  /* border: 3rpx solid #f5eeb6; */
+  /* background-color: antiquewhite; */
+  flex-direction: column;
+}
+/* .ano_text{
+  display: flex;
+  align-items: flex-start;
+  top:0%;
+  width: 100%;
+  background-color:rgb(250, 148, 114);
+} */
+.btn {
+  position: absolute;
+  left: 37.5%;
+  background-color: pink;
+  color: #FFF; 
+}
+.btn_hover {
+  background-color: rgb(248, 169, 182);
+}
+.list{
+  position: absolute;
+  top: 55%;
+  height:10%;
+  border-radius: 20%;
+}

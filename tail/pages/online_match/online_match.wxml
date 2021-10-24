@@ -1,0 +1,124 @@
+<!--pages/online_match/online_match.wxml-->
+<view class='white_texture'>
+  <!-- 上 -->
+  <view class="top"> 
+    <view class="text">玩家2</view>
+    <view class="player_2">
+
+      <text>{{hand_card4.length}}</text>               
+      <view class="s_top" wx:if="{{hand_card4.length>0}}">
+        <image bindtap="card_out" data-operation="4" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card4[0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+
+        <text>{{hand_card5.length}}</text>
+      <view class="s_top" wx:if="{{hand_card5.length>0}}">
+        <image bindtap="card_out" data-operation="5" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card5[0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+      
+        <text>{{hand_card6.length}}</text>
+      <view class="s_top" wx:if="{{hand_card6.length>0}}">
+        <image bindtap="card_out" data-operation="6" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card6[0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+
+        <text>{{hand_card7.length}}</text>
+        <view class="s_top" wx:if="{{hand_card7.length>0}}">
+        <image bindtap="card_out" data-operation="7" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card7[0]}}.png'></image> </view>
+      <view class="s_top" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+    </view>
+  </view>
+
+   <!-- 中 -->
+   <view class="turn" wx:if="{{isbegin&&turn}}">turn:玩家1</view>
+   <view class="turn" wx:if="{{isbegin&&!turn}}">turn:玩家2</view>
+   <view class="turn" wx:if="{{!isbegin}}">游戏未开始</view>
+   <view class="middle">
+      <!-- <text>{{group.card.length}}</text> -->
+      <text>{{group_length}}</text>
+      <view class="l" wx:if="{{group_length>0}}">
+          <image bindtap="group_out"  class="large" mode="heightFix" src='../../card/back.png'></image>   </view>
+      <view class="l" wx:else>
+          <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>  </view>
+
+      <!-- <text>{{place.card.length}}</text> --><!-- <text>{{place.length}}</text> -->
+      <text>{{place_length}}</text>
+      <view class="l" wx:if="{{place_length>0}}">
+          <image bindtap="" class="large" mode="heightFix" src='../../card/{{place[0]}}.png'></image>   </view>
+      <view class="l" wx:else>  
+          <image bindtap="" class="large" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image>  </view>
+  </view>
+  <!-- 下 -->
+  <view class="bottom"> 
+    <view class="player_1" >
+      <text>{{hand_card0.length}}</text>
+      <view class="s_bottom" wx:if="{{hand_card0.length>0}}">
+        <image bindtap="card_out" data-operation="0" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card0[0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+
+        <text>{{hand_card1.length}}</text>
+      <view class="s_bottom" wx:if="{{hand_card1.length>0}}">
+        <image bindtap="card_out" data-operation="1" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card1[0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+        <text>{{hand_card2.length}}</text>
+        <view class="s_bottom" wx:if="{{hand_card2.length>0}}">
+        <image bindtap="card_out" data-operation="2" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card2[0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+
+        <text>{{hand_card3.length}}</text>
+        <view class="s_bottom" wx:if="{{hand_card3.length>0}}">
+        <image bindtap="card_out" data-operation="3" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card3[0]}}.png'></image> </view>
+      <view class="s_bottom" wx:else>
+        <image bindtap="" class="small" mode="heightFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211018233906362-167797190.png'></image></view>
+    </view>
+    <view class="text">玩家1</view>
+  </view>
+  <view>
+    <image bindtap="return_home"class="home_image" mode="heightFix" src="https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021184801874-1536221154.png"></image>
+  </view>
+  <view class="create_dialog {{ showDialog ? 'show_dialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view class="dialog_mask" bindtap="return_cancel" />
+      <view class="dialog_container">
+        <!-- <view style='padding:100rpx;'> -->
+          <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021191422098-1329247360.png'></image>
+          <image bindtap='return_cancel' class="no_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025505148-1399705152.png'></image>
+          <image bindtap='return_confirm' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image>
+          <!-- </view> -->
+      </view>
+  </view>
+
+
+
+</view>
+<!--pages/player_match/player_match.wxml-->
+
+
+
+
+
+<!--pages/player_match/player_match.wxml-->
+<!-- //牌库spade（黑桃，又名葵扇）
+// ♥ heart（红桃，又名红桃）
+// ♣ club（梅花，又名草花）
+// ♦ diamond（方片，又名阶砖） -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

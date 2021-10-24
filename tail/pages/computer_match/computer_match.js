@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showDialog: false
+  },
+  return_cancel() {
+    this.setData({
+      showDialog: !this.data.showDialog
+    });
+  
+  },
+  return_confirm() {
+    wx.reLaunch({
+      url: '../mainpage/mainpage',
+    });
+  
+  },
+    
+  return_home:function(){
+      this.setData({
+        showDialog: true
+    })
   },
 
   /**
