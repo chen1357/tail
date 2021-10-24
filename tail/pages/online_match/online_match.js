@@ -15,8 +15,8 @@
         data:{
         },
         success: function (res) {//这里写调用接口成功之后所运行的函数
-          console.log("last")
-          console.log(res)
+          //console.log("last")
+          //console.log(res)
           if(res.data.msg=="操作成功")
           {
           
@@ -36,10 +36,128 @@
               
             }
             else{//进行中
-                  that.setData({
-                    'isbegin':true,
-                    'turn':res.data.data.your_turn
-                  });
+              console.log("tat"+that.data.turn)
+                  if(that.data.turn==false&&that.data.last_code!=res.data.data.last_code){
+
+                    var s=res.data.data.last_code
+                    var c=s.substring(4);//抽取的牌
+                    var t=s.split(" ")
+                    console.log(t)
+                    var x=s.substring(2,3);
+                    var card=t[2];
+                    console.log(card,x)
+                    if(x=="0")
+                    { 
+                            let place=that.data.place;
+                          var arr=[];arr=arr.concat(card);
+                          place=arr.concat(that.data.place)//抽取的牌放到放置区顶部
+                          that.divide(card)//移动到放置区对应的花色分区
+                          let len=that.data.group_length;
+                          console.log("len"+that.data.group_length)
+                          len=len-1;
+                          let len2=that.data.place_length;
+                          len2=len2+1;
+                          console.log("yyy"+len)
+                          that.setData({
+                            'place':place,
+                            'group_length':len,
+                            'place_length':len2
+                          }),
+                          that.same_detec(card);
+                            if(that.data.group_length==0)//即抽出了最后一张牌-------------跳转到游戏结束页面或者  有游戏结束哪个玩家赢了的弹窗出现，可以选择返回主页，或者 再来一局即（重新开启该页面）
+                            {
+                              console.log("201")
+                              that.game_over();
+                            }
+                            that.setData({
+                                'place_length':that.data.place.length
+                              })
+                              //回合结束，设置成非自己的回合，等待发送请求，获取请求结果，再次轮到自己的回合
+                              
+                      }
+                      else{
+                        if(card[0]=="S"){
+                          let arr=that.data.hand_card4;
+                          if(arr.length>0){
+                            var s=arr[0];
+                            arr.splice(0,1);//手牌出一张
+                          let cards=that.data.place;//放置区多一张
+                          cards=s.concat(cards);
+                          that.setData(
+                          {
+                            'hand_card4':arr,
+                            'place':cards,
+                            'hand_card_len[4]':arr.length ,/////////////////////
+                            'place_length':cards.length////////////////////////
+                          }),
+                          that.divide(s);//花色分区
+                          that.same_detec(s);
+                          }  
+                        }
+                        else if(card[0]=="H"){
+                          let arr=that.data.hand_card5;
+                          if(arr.length>0){
+                            var s=arr[0];
+                            arr.splice(0,1);//手牌出一张
+                          let cards=that.data.place;//放置区多一张
+                          cards=s.concat(cards);
+                          that.setData(
+                          {
+                            'hand_card5':arr,
+                            'place':cards,
+                            'hand_card_len[5]':arr.length ,/////////////////////
+                            'place_length':cards.length////////////////////////
+                          }),
+                          that.divide(s);//花色分区
+                          that.same_detec(s);
+                          }  
+                        }
+                        else if(card[0]=="C"){
+                          let arr=that.data.hand_card6;
+                          if(arr.length>0){
+                            var s=arr[0];
+                            arr.splice(0,1);//手牌出一张
+                          let cards=that.data.place;//放置区多一张
+                          cards=s.concat(cards);
+                          this.setData(
+                          {
+                            'hand_card6':arr,
+                            'place':cards,
+                            'hand_card_len[6]':arr.length ,/////////////////////
+                            'place_length':cards.length////////////////////////
+                          }),
+                          that.divide(s);//花色分区
+                          that.same_detec(s);
+                          } 
+                        }
+                        else if(card[0]=="D"){
+                          let arr=that.data.hand_card7;
+                          if(arr.length>0){
+                            var s=arr[0];
+                            arr.splice(0,1);//手牌出一张
+                          let cards=that.data.place;//放置区多一张
+                          cards=s.concat(cards);
+                          that.setData(
+                          {
+                            'hand_card7':arr,
+                            'place':cards,
+                            'hand_card_len[7]':arr.length ,/////////////////////
+                            'place_length':cards.length////////////////////////
+                          }),
+                          that.divide(s);//花色分区
+                          that.same_detec(s);
+                          } 
+                        }
+                      }
+                  }
+                    
+                  
+                        //clearInterval(a)
+                        console.log("mmmout") 
+                        that.setData({
+                          'isbegin':true,
+                          'turn':res.data.data.your_turn
+                        });
                 }
           }
           else{
@@ -98,11 +216,12 @@
     { 
       var app=getApp();
       var that=this;
-      this.isbegin=false,
-      this.showDialog=false,       
+      this.data.last_code="",
+      this.data.isbegin=false,
+      this.data.showDialog=false,       
       this.data.turn=false,//是否是玩家的回合 1为是
       this.data.result="",//游戏结果
-      this.isai=0,
+      this.data.isai=0,
       this.data.group=[],this.data.group_length=52,
 
      this.data.place=[],this.data.place_length=0,
@@ -119,7 +238,7 @@
       var that=this
       this.data.interval=setInterval(  
         get_last(that)
-      , 5000)
+      , 1000)
     },
     
     group_out:function()//player=1 or -1 玩家几出了牌组中牌，
@@ -154,6 +273,7 @@
                             'last_code':res.data.data.last_code//翻出的结果
                           })
                           flag=true;
+                          console.log("lastcode"+that.data.last_code)
                         }
                       },
                       fail: function (res) {//这里写调用接口失败之后所运行的函数
@@ -167,42 +287,43 @@
                        }
                     })
                     if(flag==true){
-               console.log("1")
-                  var card=this.data.last_code.substring(4);//抽取的牌
+                  console.log("1")
+                  var s=that.data.last_code
+                  var c=s.substring(4);//抽取的牌
+                  var t=s.split(" ")
+                  console.log(t)
+                  var x=s.substring(2,3);
                   console.log(card)
-                  let place=this.data.place;
+                  let place=that.data.place;
                   var arr=[];arr=arr.concat(card);
-                  place=arr.concat(this.data.place)//抽取的牌放到放置区顶部
-                  this.divide(card)//移动到放置区对应的花色分区
-                  let len=this.data.group_length;
-                  console.log("len"+this.data,group_length)
+                  place=arr.concat(that.data.place)//抽取的牌放到放置区顶部
+                  that.divide(card)//移动到放置区对应的花色分区
+                  let len=that.data.group_length;
+                  console.log("len"+that.data.group_length)
                   len=len-1;
-                  let len2=this.data.place_length;
+                  let len2=that.data.place_length;
                   len2=len2+1;
                   console.log("yyy"+len)
-                  this.setData({
+                  that.setData({
                     'place':place,
                     'group_length':len,
                     'place_length':len2
                   }),
-                    this.same_detec(card);
-                    if(this.data.group_length==0)//即抽出了最后一张牌-------------跳转到游戏结束页面或者  有游戏结束哪个玩家赢了的弹窗出现，可以选择返回主页，或者 再来一局即（重新开启该页面）
+                  that.same_detec(card);
+                    if(that.data.group_length==0)//即抽出了最后一张牌-------------跳转到游戏结束页面或者  有游戏结束哪个玩家赢了的弹窗出现，可以选择返回主页，或者 再来一局即（重新开启该页面）
                     {
                       console.log("201")
-                      this.game_over();
+                      that.game_over();
                     }
-                      this.setData({
-                        'place_length':this.data.place.length
+                    that.setData({
+                        'place_length':that.data.place.length
                       })
                       //回合结束，设置成非自己的回合，等待发送请求，获取请求结果，再次轮到自己的回合
-                      this.setData({
+                      that.setData({
                         'turn':false
                       })
-                       if(flag==true)
-                    { 
                         clearInterval(a)
                         console.log("out") 
-                    }
                 }
                 else{
                   console.log("213")
@@ -382,7 +503,7 @@
             'turn':false
           })
           /* 连接接口传操作 */
-          perform_operation(cd);
+          this.perform_operation(cd);
 
           
     }  
@@ -705,6 +826,7 @@
     },
     perform_operation:function(cd){/*执行玩家操作 */
       var flag=true;
+      var app=getApp();
       while(flag)
       {
         wx.request({
