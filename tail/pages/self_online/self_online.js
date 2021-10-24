@@ -6,13 +6,13 @@ function game_begin(that){
   console.log("x")
   wx.request({
     url: 'http://172.17.173.97:9000/api/game/'+app.globalData.uuid+'/last',
-    method: 'get',//方法分GET和POST，根据需要写
-    header: {//定死的格式，不用改，照敲就好
+    method: 'get',//方法
+    header: {//格式
     "Authorization": "Bearer "+app.globalData.token
   },
   data:{
   },
-  success: function (res) {//这里写调用接口成功之后所运行的函数
+  success: function (res) {//调用接口成功之后
     console.log(res.data)
     if(res.data.msg=="操作成功")
     {
@@ -42,7 +42,7 @@ function game_begin(that){
     }
   console.log(res.data);//调出来的数据在控制台显示，方便查看
   },
-  fail: function (res) {//这里写调用接口失败之后所运行的函数
+  fail: function (res) {//调用接口失败之后
     wx.showToast({
       title: '连接失败',
       icon: 'none',
@@ -50,9 +50,6 @@ function game_begin(that){
     console.log('.........fail..........');
    }
 })
-// setTimeout(function () {
-//   //要延时执行的代码
-//  }, 1000)
 return function(){
   game_begin(that)
 }
@@ -184,13 +181,13 @@ Page({
   get_last:function(){/*获取上一步操作 */
     wx.request({
       url: 'http://172.17.173.97:9000/api/game/'+app.globalData.uuid+'/last',
-      method: 'get',//方法分GET和POST，根据需要写
-      header: {//定死的格式，不用改，照敲就好
+      method: 'get',//方法
+      header: {//格式
       "Authorization": "Bearer "+app.globalData.token
     },
     data:{
     },
-    success: function (res) {//这里写调用接口成功之后所运行的函数
+    success: function (res) {//调用接口成功之后
       console.log(res.data.msg)
       if(res.data.msg=="操作成功")
       {
@@ -218,7 +215,7 @@ Page({
       }
     console.log(res.data);//调出来的数据在控制台显示，方便查看
     },
-    fail: function (res) {//这里写调用接口失败之后所运行的函数
+    fail: function (res) {//调用接口失败之后
       wx.showToast({
         title: '连接失败',
         icon: 'none',
@@ -233,7 +230,7 @@ Page({
       {
         wx.request({
           url: 'http://172.17.173.97:9000/api/game/'+app.globalData.uuid,
-          method: 'put',//方法分GET和POST，根据需要写
+          method: 'put',//方法
           header: {
             "Authorization": "Bearer "+app.globalData.token
           },
@@ -241,7 +238,7 @@ Page({
             "type":1,
             "card":cd
           },
-          success: function (res) {//这里写调用接口成功之后所运行的函数
+          success: function (res) {//调用接口成功之后
             if(res.data.msg== "操作成功"){
               that.setData({
                 'last_code':res.data.data.last_code//翻出的结果
@@ -249,7 +246,7 @@ Page({
               flag=false;
             }
           },
-          fail: function (res) {//这里写调用接口失败之后所运行的函数
+          fail: function (res) {//调用接口失败之后
             wx.showToast({
               title: '操作失败',
               icon: 'none',
@@ -260,23 +257,6 @@ Page({
       }
   },
 
-  
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  },
 
   /**
    * 生命周期函数--监听页面卸载
@@ -285,24 +265,5 @@ Page({
     clearInterval(this.data.interval)
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

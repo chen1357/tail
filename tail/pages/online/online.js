@@ -10,12 +10,6 @@ Page({
     self:false
   },
 
-  /**
-  * 控制 pop 的打开关闭
-  * 该方法作用有2:
-  * 1：点击弹窗以外的位置可消失弹窗
-  * 2：用到弹出或者关闭弹窗的业务逻辑时都可调用
-  */
   create_cancel() {
   this.setData({
     showDialog: !this.data.showDialog
@@ -44,14 +38,14 @@ Page({
     console.log(that.data.self)
     wx.request({
           url: 'http://172.17.173.97:9000/api/game',
-          method: 'post',//方法分GET和POST，根据需要写
-          header: {//定死的格式，不用改，照敲就好
+          method: 'post',//方法
+          header: {//格式
         "Authorization": "Bearer "+app.globalData.token
           },
           data:{
               "private": app.globalData.self_flag
           },
-          success: function (res) {//这里写调用接口成功之后所运行的函数
+          success: function (res) {//调用接口成功之后
           var app=getApp();
             if(res.data.msg=="操作成功")
             {
@@ -84,7 +78,7 @@ Page({
             }
           console.log(res.data);//调出来的数据在控制台显示，方便查看
           },
-          fail: function (res) {//这里写调用接口失败之后所运行的函数
+          fail: function (res) {//调用接口失败之后
             wx.showToast({
               title: '创建失败',
               icon: 'none',

@@ -19,7 +19,7 @@ Page({
   },
   login:function(){
     wx.navigateTo({
-      url:'../login/login',//'../login/login',
+      url:'../login/login',
     })
   },
     

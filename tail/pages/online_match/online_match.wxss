@@ -105,7 +105,34 @@
 .show_dialog .dialog_mask {
   display: block;
 }
+.game_over{
+  font-size: 70rpx;
+  width: 50%;
+  color: rgb(231, 128, 192)
+}
+.text{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.game_over_showDialog .dialog_container_2 {
+  transform: translateY(0);
+}
 
+.game_over_showDialog .dialog_mask_2 {
+  display: block;
+}
+
+.dialog_mask_2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);   /*设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4);*/
+  display: none;
+}
 .text_image{
   position: absolute;
   top:5%;

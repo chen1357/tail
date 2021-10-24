@@ -356,7 +356,7 @@
           var random = Math.floor(Math.random() * len);//牌组中随便抽出一张牌
           var x=this.data.group[random];//抽出的牌
           let group=this.data.group;
-          group.splice(random,1);//牌组中删除这张牌   ------有个动画移动牌的
+          group.splice(random,1);//牌组中删除这张牌
           let place=this.data.place;
           var arr=[];arr=arr.concat(x);
           place=arr.concat(this.data.place)//放到放置区顶部

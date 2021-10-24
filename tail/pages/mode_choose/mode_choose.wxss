@@ -27,12 +27,3 @@
   height:10%;
   border-radius: 20%;
 }
-
-/*按钮图片*/
-/* .choose_image{
-  position: absolute;
-  left:0%;
-  top:0%;
-  height:100%;
-  width: 100%;
-} */

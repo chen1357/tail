@@ -6,7 +6,7 @@
     <view class="text">玩家2</view>
     
     <view class="player_2">
-      <button class='btn' style="width: 25% ; top: 0%; background-color:{{score_2}};" bindtap='start_ai' data-player="2"  hover-class='btn_hover' >{{text_2}}</button>
+      <button class='btn' style="width: 28% ; top: 0%; background-color:{{score_2}};" bindtap='start_ai' data-player="2"  hover-class='btn_hover' >{{text_2}}</button>
       <text>{{hand_card_len[4]}}</text>               
       <view class="s_top" wx:if="{{hand_card_len[4]>0}}">
         <image bindtap="card_out" data-operation="4" data-player="2" class="small" mode="heightFix" src='../../card/{{hand_card[4][0]}}.png'></image> </view>
@@ -53,7 +53,7 @@
   <!-- 下 -->
   <view class="bottom"> 
     <view class="player_1" >
-      <button class='btn' style="width: 25% ; top: 0%;background-color:{{score_1}};" bindtap='start_ai' data-player="1"  hover-class='btn_hover' >{{text_1}}</button>
+      <button class='btn' style="width: 28% ; top: 0%;background-color:{{score_1}};" bindtap='start_ai' data-player="1"  hover-class='btn_hover' >{{text_1}}</button>
       <text>{{hand_card_len[0]}}</text>
       <view class="s_bottom" wx:if="{{hand_card_len[0]>0}}">
         <image bindtap="card_out" data-operation="0" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card[0][0]}}.png'></image> </view>

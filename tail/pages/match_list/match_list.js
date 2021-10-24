@@ -12,21 +12,16 @@ Page({
   choose:function(e){
     var that = this;
     var app=getApp();
-    // console.log("aaa")
-    // console.log(typeof(app.globalData.uuid));
-    // console.log(typeof(e.currentTarget.dataset.id));
-    // console.log("bbb")
     wx.request({
       url: 'http://172.17.173.97:9000/api/game/'+ e.currentTarget.dataset.id,
-      method: 'Post',//方法分GET和POST，根据需要写
-      header: {//定死的格式，不用改，照敲就好
+      method: 'Post',//方法
+      header: {//格式
     "Authorization": "Bearer "+app.globalData.token
-  //       'Content-Type': 'application/x-www-form-urlencoded' //json'
       },
       data:{
 
            },
-      success: function (res) {//这里写调用接口成功之后所运行的函数
+      success: function (res) {//调用接口成功之后
         //console.log(res.data.message)
         if(res.data.msg=="操作成功")
         {
@@ -51,7 +46,7 @@ Page({
         }
       console.log(res.data);//调出来的数据在控制台显示，方便查看
       },
-      fail: function (res) {//这里写调用接口失败之后所运行的函数
+      fail: function (res) {//这里写调用接口失败之后
         wx.showToast({
           title: '加入失败',
           icon: 'none',
@@ -71,8 +66,8 @@ Page({
     console.log(app.globalData.token)
     wx.request({
       url: 'http://172.17.173.97:9000/api/game/index',
-      method: 'GET',//方法分GET和POST，根据需要写
-          header: {//定死的格式，不用改，照敲就好
+      method: 'GET',//方法
+          header: {//格式
         "Authorization": "Bearer "+app.globalData.token
       //       'Content-Type': 'application/x-www-form-urlencoded' //json'
           },
@@ -80,7 +75,7 @@ Page({
             page_size:"300",
             page_num:"11"
           },
-        success: function (res) {//这里写调用接口成功之后所运行的函数
+        success: function (res) {//调用接口成功之后
             console.log(res.data)
             if(res.data.msg=="操作成功")
             {
@@ -101,7 +96,7 @@ Page({
             }
               console.log(that.data.games);//调出来的数据在控制台显示，方便查看
         },
-        fail: function (res) {//这里写调用接口失败之后所运行的函数
+        fail: function (res) {//调用接口失败之后
           wx.showToast({
             title: '获取失败',
             icon: 'none',
