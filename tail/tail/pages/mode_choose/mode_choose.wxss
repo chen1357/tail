@@ -1,0 +1,34 @@
+/* pages/mode_choose.wxss */
+
+.mode_image{
+  position: absolute;
+  top: 8%;
+  height:12%;
+}
+/*人人对战按钮*/
+.player_image{
+  position: absolute;
+  top: 30%;
+  height:10%;
+}
+/*人机对战按钮*/
+.computer_image{
+  position: absolute;
+  top: 50%;
+  height:10%;
+}
+/*在线对战按钮*/
+.online_image{
+  position: absolute;
+  top: 70%;
+  height:10%;
+}
+
+/*按钮图片*/
+/* .choose_image{
+  position: absolute;
+  left:0%;
+  top:0%;
+  height:100%;
+  width: 100%;
+} */
