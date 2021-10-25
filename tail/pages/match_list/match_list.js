@@ -12,6 +12,7 @@ Page({
   choose:function(e){
     var that = this;
     var app=getApp();
+    app.globalData.online_player="2P";
     wx.request({
       url: 'http://172.17.173.97:9000/api/game/'+ e.currentTarget.dataset.id,
       method: 'Post',//方法

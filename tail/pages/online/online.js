@@ -25,6 +25,7 @@ Page({
   self_jion:function(e){
     var that=this;
     var app=getApp();
+    app.globalData.online_player="1P";
     if(e.currentTarget.dataset.self=="true"){
       app.globalData.self_flag=true;
     }
@@ -33,7 +34,7 @@ Page({
     }
     console.log(typeof(app.globalData.self_flag))
     this.setData({
-      'self':app.globalData.self_flag
+      'self':true//app.globalData.self_flag,
     })
     console.log(that.data.self)
     wx.request({
@@ -43,7 +44,7 @@ Page({
         "Authorization": "Bearer "+app.globalData.token
           },
           data:{
-              "private": app.globalData.self_flag
+              "private": false//app.globalData.self_flag
           },
           success: function (res) {//调用接口成功之后
           var app=getApp();

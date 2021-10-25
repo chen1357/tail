@@ -41,6 +41,12 @@
           "pathName": "pages/login/login",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/online/online",
+          "pathName": "pages/online/online",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -20,7 +20,7 @@ App({
     token_2:"",
     uuid:"",
     student_id:"",
-
+    online_player:"",
     self_flag:true
   }
 })

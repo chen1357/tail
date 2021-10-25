@@ -53,7 +53,8 @@
   <!-- 下 -->
   <view class="bottom"> 
     <view class="player_1" >
-      <button class='btn' style="width: 25% ; top: 0%;background-color:{{score_1}};" bindtap='start_ai' data-player="1"  hover-class='btn_hover' >{{text_1}}</button>
+      <button class='btn' style="width: 28% ; top: 0%; background-color:pink;" bindtap='start_ai'  hover-class='btn_hover' >{{text_1}}</button>
+      
       <text>{{hand_card0.length}}</text>
       <view class="s_bottom" wx:if="{{hand_card0.length>0}}">
         <image bindtap="card_out" data-operation="0" data-player="1" class="small" mode="heightFix" src='../../card/{{hand_card0[0]}}.png'></image> </view>
@@ -93,7 +94,20 @@
           <!-- </view> -->
       </view>
   </view>
-
+  <view class="create_dialog {{ game_over_showDialog ? 'game_over_showDialog' : '' }}">
+    <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+      <view bindtap='return_confirm' class="dialog_mask_2"  />
+      <view bindtap='return_confirm' class="dialog_container_2">
+        <!-- <view style='padding:100rpx;'> -->
+          <view class="text"><text class="game_over">游戏结束</text></view>
+          <view class="text"><text class="game_over">{{result}}</text></view>
+          <view class="text">(点击任意处返回主页)</view>
+          <!-- <image  class="text_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211021191422098-1329247360.png'></image> -->
+          
+          <!-- <image bindtap='return_confirm' class="yes_image" mode="widthFix" src='https://img2020.cnblogs.com/blog/1925109/202110/1925109-20211017025445973-915777083.png'></image> -->
+          <!-- </view> -->
+      </view>
+  </view>
 
 
 </view>
